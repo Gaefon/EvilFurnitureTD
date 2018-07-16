@@ -1,0 +1,17 @@
+﻿  Creating makefile for hot reloading Project01Editor (modules to compile have changed)
+  Compiling game modules for hot reload
+  Parsing headers for Project01Editor
+    Running UnrealHeaderTool "C:\Users\Ghislain\Documents\Unreal Projects\Project01\Project01.uproject" "C:\Users\Ghislain\Documents\Unreal Projects\Project01\Intermediate\Build\Win64\Project01Editor\Development\Project01Editor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -installed
+  Reflection code generated for Project01Editor in 7,768009 seconds
+  Performing 5 actions (4 in parallel)
+  RTSSpectatorPawn.cpp
+  Project01.init.gen.cpp
+  RTSSpectatorPawn.gen.cpp
+C:\Users\Ghislain\Documents\Unreal Projects\Project01\Source\Project01\RTSSpectatorPawn.cpp(25): warning C4996: 'USceneComponent::AttachTo': This function is deprecated, please use AttachToComponent instead. Please update your code to the new API before upgrading to the next release, otherwise your project will no longer compile.
+  C:\Program Files\Epic Games\UE_4.18\Engine\Source\Runtime\Engine\Classes\Components/SceneComponent.h(641): note: voir la déclaration de 'USceneComponent::AttachTo'
+  [4/5] Link UE4Editor-Project01-9342.dll
+  [5/5] Link UE4Editor-Project01-9342.lib
+     CrÚation de la bibliothÞque C:\Users\Ghislain\Documents\Unreal Projects\Project01\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-Project01-9342.lib et de l'objet C:\Users\Ghislain\Documents\Unreal Projects\Project01\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-Project01-9342.exp
+     CrÚation de la bibliothÞque C:\Users\Ghislain\Documents\Unreal Projects\Project01\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-Project01-9342.suppressed.lib et de l'objet C:\Users\Ghislain\Documents\Unreal Projects\Project01\Intermediate\Build\Win64\UE4Editor\Development\UE4Editor-Project01-9342.suppressed.exp
+  Deploying Project01Editor Win64 Development...
+  Total build time: 24,37 seconds (Local executor: 9,81 seconds)
