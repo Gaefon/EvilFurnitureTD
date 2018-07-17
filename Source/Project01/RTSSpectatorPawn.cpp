@@ -64,29 +64,6 @@ void ARTSSpectatorPawn::repositionCamera()
 
 	new_rotation.Pitch = -camera_angle;
 
-	/*FVector newLocation(0.0f, 0.0f, 0.0f);
-	FRotator newRotation(0.0f, 0.0f, 0.0f);
-
-	//Find Cos and Sin of the Camera Z Angle
-	float sinCameraZAngle = FMath::Sin(FMath::DegreesToRadians(CameraZAnlge));
-	float cosCameraZAngle = FMath::Cos(FMath::DegreesToRadians(CameraZAnlge));
-
-	//Find the Cos and Sin of the Camera Height Angle
-	float sinCameraHeightAngle = FMath::Sin(FMath::DegreesToRadians(CameraHeightAngle));
-	float cosCameraHeightAngle = FMath::Cos(FMath::DegreesToRadians(CameraHeightAngle));
-
-	//Set newLocation X to cosCameraZAngle * sinCameraHeightAngle * CameraRadius
-	newLocation.X = cosCameraZAngle * cosCameraHeightAngle * CameraRadius;
-
-	//Set newLocation Y to sinCameraZangle * sinCameraHeightAngle * CameraRadius
-	newLocation.Y = sinCameraZAngle * cosCameraHeightAngle * CameraRadius;
-
-	//Set newLocation Z to cosCameraHeightAngle * CameraRadius
-	newLocation.Z = sinCameraHeightAngle * CameraRadius;
-
-	//Set the new rotations
-	newRotation = (FVector(0.0f, 0.0f, 0.0f) - newLocation).Rotation();*/
-
 
 	//Set the camera's location and rotation to the new values
 	camera_component->SetRelativeLocation(new_location);
