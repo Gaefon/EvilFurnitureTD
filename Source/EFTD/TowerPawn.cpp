@@ -6,16 +6,17 @@
 // Sets default values
 ATowerPawn::ATowerPawn()
 {
- 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
+	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	TowerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("TowerMesh"));
+	ConstructionTime = 3;
 }
 
 // Called when the game starts or when spawned
 void ATowerPawn::BeginPlay()
 {
 	Super::BeginPlay();
-	
+
 }
 
 // Called every frame
@@ -32,3 +33,12 @@ void ATowerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 
 }
 
+void ATowerPawn::SetActive(bool NewActivityState)
+{
+	bIsActive = NewActivityState;
+}
+
+bool ATowerPawn::IsActive()
+{
+	return bIsActive;
+}
