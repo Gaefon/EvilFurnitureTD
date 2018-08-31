@@ -28,6 +28,9 @@ public:
 		bool IsActive();
 	UFUNCTION(BlueprintCallable, Category = "Tower")
 		void SetActive(bool NewActivityState);
+	UFUNCTION(BluePrintCallable, Category = "Tower")
+		void SetTowerRadius(float NewTowerRadius);
+
 
 protected:
 	// Called when the game starts or when spawned

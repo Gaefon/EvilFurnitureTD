@@ -12,7 +12,7 @@ ATowerPawn::ATowerPawn()
 	TowerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("TowerMesh"));
 	DetectionSphere = CreateDefaultSubobject<USphereComponent>(TEXT("CollectionSphere"));
 	DetectionSphere->AttachTo(RootComponent);
-	DetectionSphere->SetSphereRadius(600.f);
+	SetTowerRadius(200.f);
 	ConstructionTime = 3;
 }
 
@@ -34,7 +34,7 @@ void ATowerPawn::Tick(float DeltaTime)
 void ATowerPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
-	
+
 }
 
 void ATowerPawn::SetActive(bool NewActivityState)
@@ -47,6 +47,12 @@ bool ATowerPawn::IsActive()
 	return bIsActive;
 }
 
+void ATowerPawn::SetTowerRadius(float TowerRadius)
+{
+	DetectionSphere->SetSphereRadius(TowerRadius);
+}
+
+
 void ATowerPawn::DetectEnemies()
 {
 	//Get all enemies Actors and store them in an array
@@ -55,11 +61,12 @@ void ATowerPawn::DetectEnemies()
 	//Foreach enemies Actors we detected
 	for (int32 iDetected = 0; iDetected < DetectedActors.Num(); iDetected++)
 	{
-		UE_LOG(LogClass, Log, TEXT("Actor detected");
+
 		AFurnitureCharacter* const Furniture = Cast<AFurnitureCharacter>(DetectedActors[iDetected]);
 		if (Furniture && Furniture->IsActive())
 		{
-			UE_LOG(LogClass, Log, TEXT("Enemy furniture detected"));
+			FString actorName = DetectedActors[iDetected]->GetName();
+			UE_LOG(LogClass, Log, TEXT("Enemy furniture detected : %s"), *actorName);
 		}
 		//Take first and cast into Furniture
 
