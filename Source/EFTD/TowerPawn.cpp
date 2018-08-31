@@ -12,7 +12,7 @@ ATowerPawn::ATowerPawn()
 	TowerMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("TowerMesh"));
 	DetectionSphere = CreateDefaultSubobject<USphereComponent>(TEXT("CollectionSphere"));
 	DetectionSphere->AttachTo(RootComponent);
-	DetectionSphere->SetSphereRadius(200.f);
+	DetectionSphere->SetSphereRadius(600.f);
 	ConstructionTime = 3;
 }
 
@@ -55,6 +55,7 @@ void ATowerPawn::DetectEnemies()
 	//Foreach enemies Actors we detected
 	for (int32 iDetected = 0; iDetected < DetectedActors.Num(); iDetected++)
 	{
+		UE_LOG(LogClass, Log, TEXT("Actor detected");
 		AFurnitureCharacter* const Furniture = Cast<AFurnitureCharacter>(DetectedActors[iDetected]);
 		if (Furniture && Furniture->IsActive())
 		{
